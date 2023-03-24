@@ -1,0 +1,17 @@
+button, .addButton {
+  text-align: center;
+  margin: auto;
+  background-color: #cee1a8;
+  border: none;
+  padding: 10px;
+	border-radius: 3px;
+}
+
+button:hover, .addButton:hover {
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
+}
+
+button:focus, .addButton:focus {
+  outline: 0;
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
+}

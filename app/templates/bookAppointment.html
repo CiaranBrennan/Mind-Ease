@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/signIn.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}">
+</head>
+
+<div class="row header">
+  <div class="col-12">
+    <div class="content1">
+      <h1>Book an Appointment</h1>
+      <form action="" method="post" name="bookApp">
+        {{ form.hidden_tag() }}
+        <table>
+          <tr>
+            <td>Date:</td>
+            <td>{{ form.appDate }}</td>
+          </tr>
+          <tr>
+            <td>Time:</td>
+            <td>{{ form.appTime }}</td>
+          </tr>
+        </table>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <p>
+          {% for message in messages %}
+          {{ message }}
+          {% endfor %}
+        </p>
+        {% else %}
+        <p>​</p>
+        {% endif %}
+        {% endwith %}
+        <input class="addButton" type="submit" value="Book appointment">
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+{% endblock %}

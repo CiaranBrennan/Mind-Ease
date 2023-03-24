@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}">
+</head>
+<div class="row header">
+  <div class="col-12">
+    <div class="content1">
+      {% if appointment %}
+      <p>You have an upcoming appointment:</p>
+      <p>{{ appointment.date }}</br>
+      {{ appointment.time }}</p>
+      <a href="/editAppointment"><button>Edit Appointment</button></a>
+      {% else %}
+      <p>You have no upcoming appointments!</p>
+      <a href="/bookAppointment"><button>Book an Appointment</button></a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

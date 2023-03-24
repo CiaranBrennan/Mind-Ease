@@ -1,0 +1,43 @@
+<!-- This line imports the navigation bar from base.html -->
+{% extends "base.html" %}
+{% block content %}
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/signIn.css') }}">
+</head>
+<div class="row header">
+  <div class="col-12">
+    <div class="content1">
+      <form action="" method="post" name="signIn">
+        <!-- Displays the sign in form.
+              hidden_tag prevents CSRF -->
+        {{ form.hidden_tag() }}
+        <table>
+          <tr>
+            <td class="fieldDesc">Username:</td>
+            <td class="field">{{ form.username }}</td>
+          </tr>
+          <tr>
+            <td class="fieldDesc">Password:</td>
+            <td class="field">{{ form.password }}</td>
+          </tr>
+        </table>
+        <!-- These lines print any error messages that may be there -->
+         {% with messages = get_flashed_messages() %}
+         {% if messages %}
+         <p>
+           {% for message in messages %}
+           {{ message }}
+           {% endfor %}
+         </p>
+         {% else %}
+         <p>​</p>
+         {% endif %}
+         {% endwith %}
+         <input class="addButton" type="submit" value="Sign In">
+        </div>
+    </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

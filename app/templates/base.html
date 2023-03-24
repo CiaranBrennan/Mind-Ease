@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/boxes.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>{{ title }}</title>
+</head>
+<body>
+  <div class="row navbar">
+    <div class="col-12 topnav" id="myTopnav">
+      {% if username %}
+        <a href="/" class="siteTitle">Mind Ease   -   {{ username }}</a>
+        <a href="modules">View Modules</a>
+        <a href="appointments">Appointments</a>
+        <a class="accounts" href="logOut">Log Out</a>
+        <script src="static/js/navbar.js"></script>
+        <a href="javascript:void(0);" class="icon material-icons" onclick="expandNavbar()">more_horiz</a>
+      {% else %}
+        <a href="/" class="siteTitle">Mind Ease</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div>
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>

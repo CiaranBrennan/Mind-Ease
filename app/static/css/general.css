@@ -1,0 +1,15 @@
+html, body {
+  font-family: 'Roboto', sans-serif;
+	margin: 0;
+	float: left;
+	width: 100%;
+	height: 100%;
+  background: #cee1a8;
+}
+
+.content1 {
+	text-align: center;
+	margin: auto;
+	position: relative;
+	z-index: 100;
+}

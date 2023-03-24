@@ -1,0 +1,4 @@
+*.pyc
+app/*.pyc
+/flask
+*.db-journal
